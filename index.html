@@ -2,103 +2,165 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10254a">
 <title>Internship Portfolio | Muhammad Shoaib</title>
 <meta name="description" content="Internship portfolio of Muhammad Shoaib, BS English Language Teaching, University of Sindh, Jamshoro.">
 <style>
-:root{--navy:#10254a;--gold:#a88a3d;--line:#c9d1df;--grey:#5b6475;--ink:#1e2430;--pale:#f3f5f9;
---serif:"Times New Roman",Times,Georgia,serif;--sans:Helvetica,Arial,sans-serif}
+:root{
+  --navy:#10254a;--navy-2:#1b3a6e;--gold:#a88a3d;--gold-soft:#e9dfc0;
+  --line:#d5dbe6;--grey:#5b6475;--ink:#1e2430;--pale:#f3f5f9;--bg:#e6e9f0;
+  --serif:"Times New Roman",Times,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,6vw,60px);
+}
 *{box-sizing:border-box}
-body{margin:0;background:#dfe3ea;font-family:var(--serif);color:var(--ink);line-height:1.5}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.bar{background:var(--navy);color:#fff;font-family:var(--sans);font-size:13px;text-align:center;letter-spacing:.06em;padding:11px 20px;border-bottom:3px solid var(--gold)}
-.sheet{max-width:794px;margin:28px auto;background:#fff;position:relative;box-shadow:0 2px 14px rgba(16,37,74,.25);padding:56px 60px 64px;min-height:1123px}
-.sheet.cover{border:3px solid var(--navy);outline:1px solid var(--gold);outline-offset:-9px;text-align:center;padding-top:60px;padding-bottom:90px}
-.sans{font-family:var(--sans)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);font-family:var(--serif);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--navy);padding:8px 14px;font-family:var(--sans);font-size:14px;z-index:100;border-radius:4px}
+.skip:focus{left:8px}
+
+/* top navigation */
+.bar{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;border-bottom:3px solid var(--gold);font-family:var(--sans)}
+.bar-in{max-width:794px;margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px}
+.bar-t{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar nav{display:flex;gap:4px}
+.bar nav a{color:#dfe6f3;text-decoration:none;font-size:12px;letter-spacing:.06em;padding:8px 12px;border-radius:4px;transition:background .2s,color .2s}
+.bar nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.bar nav a:focus-visible{outline-color:#fff}
+
+/* page sheet */
+.sheet{
+  max-width:794px;width:calc(100% - 32px);margin:28px auto;background:#fff;position:relative;
+  box-shadow:0 1px 3px rgba(16,37,74,.12),0 12px 32px rgba(16,37,74,.14);
+  padding:56px var(--pad) 28px;min-height:1123px;
+  display:flex;flex-direction:column;scroll-margin-top:64px;
+}
+.sheet.cover{border:3px solid var(--navy);outline:1px solid var(--gold);outline-offset:-9px;text-align:center;padding-top:60px;padding-bottom:0}
 .lab{font-family:var(--sans);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
 
 /* cover */
-.seal{width:80px;height:80px;display:block;margin:0 auto 26px}
-.cover h1{margin:0;font-size:clamp(25px,5.2vw,38px);letter-spacing:.12em;color:var(--navy);line-height:1.25;font-weight:700}
-.dept{font-style:italic;color:var(--grey);margin:10px 0 0;font-size:17px}
+.seal{width:clamp(96px,22vw,130px);height:auto;aspect-ratio:1;object-fit:contain;display:block;margin:-10px auto 8px}
+.cover h1{margin:0;font-size:clamp(22px,5.4vw,38px);letter-spacing:.12em;color:var(--navy);line-height:1.25;font-weight:700}
+.dept{font-style:italic;color:var(--grey);margin:10px 0 0;font-size:clamp(15px,2.6vw,17px)}
 .orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto;max-width:300px}
 .orn i{flex:1;height:1px;background:var(--gold)}
 .orn b{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
-.title{max-width:480px;margin:34px auto 0;padding:26px 0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);position:relative}
+.title{width:100%;max-width:480px;margin:30px auto 0;padding:clamp(18px,4vw,26px) 0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);position:relative}
 .title::before,.title::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--gold)}
 .title::before{top:4px}.title::after{bottom:4px}
-.title h2{margin:0;font-size:clamp(34px,8vw,58px);letter-spacing:.2em;padding-left:.2em;color:var(--navy);line-height:1.2}
-.sub{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--gold);margin:26px 0 38px;text-transform:uppercase}
-.rows{max-width:620px;margin:0 auto;text-align:left;border-top:2px solid var(--navy)}
-.row{display:grid;grid-template-columns:170px 1fr;align-items:center;padding:13px 4px;border-bottom:1px solid var(--line);min-height:54px}
+.title h2{margin:0;font-size:clamp(30px,8.5vw,58px);letter-spacing:.18em;padding-left:.18em;color:var(--navy);line-height:1.2;font-weight:700}
+.sub{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--gold);margin:24px 0 34px;text-transform:uppercase}
+.rows{width:100%;max-width:620px;margin:0 auto;text-align:left;border-top:2px solid var(--navy)}
+.row{display:grid;grid-template-columns:170px 1fr;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid var(--line);min-height:54px}
 .row:last-child{border-bottom:2px solid var(--navy)}
-.row strong{font-size:19px;color:var(--navy)}
+.row strong{font-size:clamp(16px,3.2vw,19px);color:var(--navy);line-height:1.35}
 .row em{display:block;color:var(--grey);font-size:15px;margin-top:1px}
-.cfoot{position:absolute;left:12px;right:12px;bottom:12px;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:.3em;padding:12px 8px;text-align:center}
+.cfoot{margin:auto calc(var(--pad) * -1) 0;position:relative;
+  background:var(--navy);color:#fff;font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:.3em;padding:14px 8px;text-align:center}
+.cover .rows{margin-bottom:40px}
 
 /* inner pages */
-.top{display:flex;justify-content:space-between;font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding-bottom:9px;border-bottom:2px solid var(--navy);box-shadow:0 3px 0 -2px #fff,0 4px 0 -2px var(--gold)}
+.top{display:flex;justify-content:space-between;gap:12px;font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding-bottom:9px;border-bottom:2px solid var(--navy);box-shadow:0 3px 0 -2px #fff,0 4px 0 -2px var(--gold)}
 .top b{color:var(--navy)}.top span{color:var(--grey)}
-.ptitle{text-align:center;margin:44px 0 0}
-.ptitle h2{margin:0;font-size:clamp(24px,5vw,34px);letter-spacing:.14em;color:var(--navy)}
+.ptitle{text-align:center;margin:40px 0 0}
+.ptitle h2{margin:0;font-size:clamp(22px,5vw,34px);letter-spacing:.14em;color:var(--navy);line-height:1.25}
 .ptitle .orn{max-width:150px;margin:14px auto}
-.ptitle p{margin:0;font-style:italic;color:var(--grey);font-size:17px}
-.prof{display:grid;grid-template-columns:170px 1fr;gap:34px;margin-top:36px;align-items:start}
+.ptitle p{margin:0;font-style:italic;color:var(--grey);font-size:clamp(15px,2.6vw,17px)}
+.prof{display:grid;grid-template-columns:170px minmax(0,1fr);gap:clamp(20px,4vw,34px);margin-top:34px;align-items:start}
 .photo{text-align:center}
-.frame{padding:5px;border:1px solid var(--gold);display:inline-block}
+.frame{padding:5px;border:1px solid var(--gold);display:inline-block;background:#fff}
 .frame img{display:block;width:150px;height:197px;object-fit:cover;border:5px solid #fff;outline:1.5px solid var(--navy);outline-offset:-5px;background:var(--pale)}
 .photo h3{margin:16px 0 2px;font-size:18px;color:var(--navy)}
 .photo small{font-family:var(--sans);font-size:11px;color:var(--grey);letter-spacing:.04em}
 table{width:100%;border-collapse:collapse;border-top:2px solid var(--navy)}
-th,td{text-align:left;padding:11px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:#f8f9fc}
 tr:last-child th,tr:last-child td{border-bottom:2px solid var(--navy)}
-th{width:38%;font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;padding-top:14px}
-td{font-size:18px}
-h3.h{margin:44px 0 18px;font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:9px;position:relative}
+th{width:38%;font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;padding-top:15px}
+td{font-size:clamp(16px,2.8vw,18px);overflow-wrap:anywhere}
+h3.h{margin:42px 0 18px;font-size:clamp(14px,2.6vw,17px);letter-spacing:.2em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:9px;position:relative}
 h3.h::after{content:"";position:absolute;left:0;bottom:-2.5px;width:52px;height:3px;background:var(--gold)}
-.txt p{margin:0 0 14px;text-align:justify;font-size:17.5px;line-height:1.65;hyphens:auto}
-ol.obj{list-style:none;margin:0 0 30px;padding:0}
-ol.obj li{display:grid;grid-template-columns:54px 1fr;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:18px}
+.txt p{margin:0 0 14px;text-align:justify;font-size:clamp(16px,2.6vw,17.5px);line-height:1.7;hyphens:auto;-webkit-hyphens:auto}
+ol.obj{list-style:none;margin:0 0 30px;padding:0;counter-reset:n}
+ol.obj li{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:clamp(16px,2.8vw,18px);line-height:1.5}
 ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;font-family:var(--sans);font-weight:700;font-size:20px;color:var(--gold)}
-ol.obj{counter-reset:n}
-.close{border-left:3px solid var(--gold);padding:4px 0 4px 20px;font-style:italic;color:var(--navy);font-size:18.5px;line-height:1.7;margin-top:34px}
-.foot{position:absolute;left:60px;right:60px;bottom:30px;border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;color:var(--grey)}
+.close{border-left:3px solid var(--gold);padding:4px 0 4px 20px;font-style:italic;color:var(--navy);font-size:clamp(16.5px,2.8vw,18.5px);line-height:1.7;margin:30px 0 0;background:linear-gradient(90deg,var(--pale),transparent 70%)}
+.foot{margin-top:auto;padding-top:34px}
+.foot-in{border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;color:var(--grey)}
 .foot b{font-family:var(--serif);font-size:15px;color:var(--navy)}
 
-@media (max-width:700px){
- .sheet{margin:0 0 16px;padding:36px 22px 80px;min-height:0;box-shadow:none}
- .sheet.cover{padding-bottom:90px}
- .row{grid-template-columns:1fr;gap:2px}
- .prof{grid-template-columns:1fr}
- .foot{left:22px;right:22px;font-size:9.5px}.foot span:last-child{display:none}
- .top span{display:none}
- .cover h1{letter-spacing:.08em}
- .title h2{letter-spacing:.1em}
+/* tablet */
+@media (max-width:760px){
+  .bar nav a{padding:8px 9px}
+  .sheet{width:100%;margin:0 0 14px;min-height:0;box-shadow:none;border-bottom:1px solid var(--line)}
+  .sheet.cover{border-width:0;outline:0;border-bottom:1px solid var(--line);box-shadow:inset 0 0 0 2px var(--navy),inset 0 0 0 5px #fff,inset 0 0 0 6px var(--gold)}
+  .row{grid-template-columns:1fr;gap:3px}
 }
+/* phone */
+@media (max-width:560px){
+  .bar-t{display:none}
+  .bar-in{justify-content:center}
+  .bar nav{width:100%;justify-content:space-around}
+  .top span{display:none}
+  .cover h1{letter-spacing:.08em}
+  .title h2{letter-spacing:.1em;padding-left:.1em}
+  .sub{letter-spacing:.2em}
+  .prof{grid-template-columns:1fr}
+  .photo{padding-bottom:6px}
+  .txt p{text-align:left}
+  .foot-in span:last-child{display:none}
+  .cfoot{letter-spacing:.18em;font-size:10px}
+  ol.obj li{grid-template-columns:44px minmax(0,1fr)}
+  /* stacked table */
+  th,td{display:block;width:100%}
+  th{padding:12px 8px 0;border-bottom:0}
+  td{padding:2px 8px 12px}
+  tbody tr:nth-child(even){background:transparent}
+  tbody tr:nth-child(odd){background:#f8f9fc}
+  tr:last-child th{border-bottom:0}
+}
+
+/* print: exact A4 pages */
 @page{size:A4;margin:0}
 @media print{
- body{background:#fff}.bar{display:none}
- .sheet{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:0;page-break-after:always;overflow:hidden;max-width:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
- .cfoot,.bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .bar,.skip{display:none}
+  .sheet{margin:0;box-shadow:none;width:210mm;max-width:none;height:297mm;min-height:0;page-break-after:always;break-after:page;overflow:hidden;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;border-bottom:0;padding:56px 60px 28px}
+  .sheet.cover{box-shadow:none;border:3px solid var(--navy);outline:1px solid var(--gold);outline-offset:-9px}
+  .cfoot{margin-left:-60px;margin-right:-60px}
+  .foot-in span:last-child{display:inline}
+  .prof{grid-template-columns:170px minmax(0,1fr)}
+  th,td{display:table-cell}
 }
 </style>
 </head>
 <body>
-<div class="bar"><span>Internship Portfolio: Muhammad Shoaib</span></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <span class="bar-t">Internship Portfolio: Muhammad Shoaib</span>
+    <nav aria-label="Portfolio sections">
+      <a href="#cover">Cover</a>
+      <a href="#profile">Profile</a>
+      <a href="#objectives">Objectives</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
 
 <!-- COVER -->
-<main>
-<section class="sheet cover" aria-label="Cover page">
-  <svg class="seal" viewBox="0 0 80 80" role="img" aria-label="University seal">
-    <circle cx="40" cy="40" r="38" fill="none" stroke="#10254a" stroke-width="2"/>
-    <circle cx="40" cy="40" r="33" fill="none" stroke="#a88a3d" stroke-width=".9"/>
-    <path fill="#10254a" d="M40 50C47 55 57 55 63 52V31C57 34 47 34 40 29ZM40 50C33 55 23 55 17 52V31C23 34 33 34 40 29Z"/>
-    <path d="M40 31V50" stroke="#fff" stroke-width="1"/>
-    <path fill="#a88a3d" d="M40 15l3.5 3.5L40 22l-3.5-3.5zM40 62l2.5 2.5L40 67l-2.5-2.5z"/>
-  </svg>
+<section class="sheet cover" id="cover" aria-label="Cover page">
+  <img class="seal" src="logo.png" alt="University of Sindh official logo" width="130" height="130">
   <h1>UNIVERSITY OF SINDH<br>JAMSHORO</h1>
   <p class="dept">Department of English Language and Literature</p>
-  <div class="orn"><i></i><b></b><i></i></div>
+  <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
   <div class="title"><h2>INTERNSHIP<br>PORTFOLIO</h2></div>
   <p class="sub">School Teaching Internship</p>
   <div class="rows">
@@ -114,25 +176,27 @@ ol.obj{counter-reset:n}
 </section>
 
 <!-- PROFILE -->
-<section class="sheet" aria-labelledby="t2">
+<section class="sheet" id="profile" aria-labelledby="t2">
   <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
-  <div class="ptitle"><h2 id="t2">STUDENT PROFILE</h2><div class="orn"><i></i><b></b><i></i></div><p>Learning Today, Teaching Tomorrow</p></div>
+  <div class="ptitle"><h2 id="t2">STUDENT PROFILE</h2><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div><p>Learning Today, Teaching Tomorrow</p></div>
   <div class="prof">
     <div class="photo">
-      <div class="frame"><img src="photo.jpg" alt="Portrait of Muhammad Shoaib"></div>
+      <div class="frame"><img src="photo.jpg" alt="Portrait of Muhammad Shoaib" width="150" height="197" loading="lazy" decoding="async"></div>
       <h3>Muhammad Shoaib</h3><small>BS English Language Teaching</small>
     </div>
     <table>
-      <tr><th scope="row">Name</th><td>Muhammad Shoaib</td></tr>
-      <tr><th scope="row">Roll number</th><td>2K24/ELT/66</td></tr>
-      <tr><th scope="row">Degree program</th><td>BS English Language Teaching (ELT)</td></tr>
-      <tr><th scope="row">Academic level</th><td>Third Year</td></tr>
-      <tr><th scope="row">Department</th><td>English Language and Literature</td></tr>
-      <tr><th scope="row">University</th><td>University of Sindh, Jamshoro</td></tr>
-      <tr><th scope="row">Internship school</th><td>Ideal Public High School</td></tr>
-      <tr><th scope="row">School supervisor</th><td>Shahida Junejo</td></tr>
-      <tr><th scope="row">Internship coordinator</th><td>Dr. Sumera Bhunbhro</td></tr>
-      <tr><th scope="row">Internship duration</th><td>80 Hours</td></tr>
+      <tbody>
+        <tr><th scope="row">Name</th><td>Muhammad Shoaib</td></tr>
+        <tr><th scope="row">Roll number</th><td>2K24/ELT/66</td></tr>
+        <tr><th scope="row">Degree program</th><td>BS English Language Teaching (ELT)</td></tr>
+        <tr><th scope="row">Academic level</th><td>Third Year</td></tr>
+        <tr><th scope="row">Department</th><td>English Language and Literature</td></tr>
+        <tr><th scope="row">University</th><td>University of Sindh, Jamshoro</td></tr>
+        <tr><th scope="row">Internship school</th><td>Ideal Public High School</td></tr>
+        <tr><th scope="row">School supervisor</th><td>Shahida Junejo</td></tr>
+        <tr><th scope="row">Internship coordinator</th><td>Dr. Sumera Bhunbhro</td></tr>
+        <tr><th scope="row">Internship duration</th><td>80 Hours</td></tr>
+      </tbody>
     </table>
   </div>
   <h3 class="h">Introduction</h3>
@@ -142,13 +206,13 @@ ol.obj{counter-reset:n}
     <p>Throughout the internship, I participated in teaching activities, helped students understand their lessons, and assisted teachers in maintaining a positive learning environment. I also observed how teachers used textbooks, examples, questions, and discussions to make lessons more effective.</p>
     <p>This experience enhanced my understanding of teaching practices, improved my communication and presentation skills, and increased my confidence. It also helped me connect my academic knowledge with practical classroom experience and develop a better understanding of my future profession as an English language teacher.</p>
   </div>
-  <div class="foot"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>2</b><span>Department of English Language and Literature</span></div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>2</b><span>Department of English Language and Literature</span></div></footer>
 </section>
 
 <!-- OBJECTIVES -->
-<section class="sheet" aria-labelledby="t3">
+<section class="sheet" id="objectives" aria-labelledby="t3">
   <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
-  <div class="ptitle"><h2 id="t3">INTERNSHIP OBJECTIVES</h2><div class="orn"><i></i><b></b><i></i></div></div>
+  <div class="ptitle"><h2 id="t3">INTERNSHIP OBJECTIVES</h2><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div></div>
   <div class="txt" style="margin-top:30px"><p>The primary purpose of my 80-hour teaching internship at Ideal Public High School was to develop professional teaching abilities and gain firsthand experience of the educational environment. The internship was designed to help me understand the practical aspects of English language teaching and the learning needs of school students.</p></div>
   <h3 class="h" style="margin-top:34px">My major objectives were</h3>
   <ol class="obj">
@@ -162,8 +226,9 @@ ol.obj{counter-reset:n}
     <li>To build professional ethics, responsibility, patience, and confidence as a future English language teacher.</li>
   </ol>
   <p class="close">Through these objectives, I aimed to strengthen my teaching abilities, improve my professional knowledge, and gain the practical skills required for a successful career in English Language Teaching.</p>
-  <div class="foot"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>3</b><span>Department of English Language and Literature</span></div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>3</b><span>Department of English Language and Literature</span></div></footer>
 </section>
+
 </main>
 </body>
 </html>
