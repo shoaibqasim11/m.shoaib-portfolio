@@ -82,8 +82,8 @@ tbody tr:nth-child(even){background:#f8f9fc}
 tr:last-child th,tr:last-child td{border-bottom:2px solid var(--navy)}
 th{width:38%;font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;padding-top:15px}
 td{font-size:clamp(16px,2.8vw,18px);overflow-wrap:anywhere}
-h3.h{margin:42px 0 18px;font-size:clamp(14px,2.6vw,17px);letter-spacing:.2em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:9px;position:relative}
-h3.h::after{content:"";position:absolute;left:0;bottom:-2.5px;width:52px;height:3px;background:var(--gold)}
+h2.h,h3.h{margin:42px 0 18px;font-size:clamp(14px,2.6vw,17px);letter-spacing:.2em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:9px;position:relative}
+h2.h::after,h3.h::after{content:"";position:absolute;left:0;bottom:-2.5px;width:52px;height:3px;background:var(--gold)}
 .txt p{margin:0 0 14px;text-align:justify;font-size:clamp(16px,2.6vw,17.5px);line-height:1.7;hyphens:auto;-webkit-hyphens:auto}
 ol.obj{list-style:none;margin:0 0 30px;padding:0;counter-reset:n}
 ol.obj li{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-size:clamp(16px,2.8vw,18px);line-height:1.5}
@@ -92,6 +92,36 @@ ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;fo
 .foot{margin-top:auto;padding-top:34px}
 .foot-in{border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;color:var(--grey)}
 .foot b{font-family:var(--serif);font-size:15px;color:var(--navy)}
+
+/* logbook + journal pages */
+.bar nav{flex-wrap:wrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ptitle.compact{margin-top:30px}
+.ptitle.compact h2{font-size:clamp(20px,4.6vw,28px)}
+.ptitle.compact .orn{margin:10px auto}
+.h.first,.h.tight{margin-top:30px}
+.shots{display:flex;flex-direction:column;gap:18px;margin-top:22px}
+.h + .shots{margin-top:0}
+.shot{margin:0;text-align:center}
+.shot a{display:inline-block;max-width:100%;border:1px solid var(--line);padding:6px;background:#fff;box-shadow:0 1px 4px rgba(16,37,74,.12);border-radius:2px;line-height:0}
+.shot img{display:block;margin:0 auto;width:auto;height:auto;max-width:100%;max-height:var(--shot-h,350px);background:var(--pale)}
+.shot.big{--shot-h:720px}
+.shot figcaption{font-family:var(--sans);font-size:12px;line-height:1.45;color:var(--grey);margin-top:9px;letter-spacing:.02em}
+.shot figcaption b{color:var(--navy)}
+.hint{display:block;font-style:italic;font-size:11px;margin-top:1px}
+.slot a:not(:has(img)){display:none}
+.slot:has(img) .slot-ph{display:none}
+.slot-ph{width:min(100%,512px);aspect-ratio:512/364;margin:0 auto;border:2px dashed var(--gold);background:var(--pale);display:grid;place-items:center;text-align:center;font-family:var(--sans);color:var(--grey)}
+.slot-ph b{display:block;font-size:20px;letter-spacing:.2em;color:var(--navy);margin-bottom:6px}
+.slot-ph span{font-size:13px;letter-spacing:.04em}
+.sum{margin-top:0}
+.sum th,.sum td{padding:7px 10px;font-size:15px;line-height:1.35}
+.sum thead th{background:var(--navy);color:#fff;width:auto;font-size:10.5px;padding:9px 10px}
+.sum tbody th,.sum tfoot th{width:auto;font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:15.5px;font-weight:700;padding-top:7px}
+.sum th em{font-weight:400;color:var(--grey);font-size:13px}
+.sum .n{text-align:center;width:24%}
+.sum tfoot th,.sum tfoot td{background:var(--pale);color:var(--navy);font-weight:700}
+.note{margin:10px 0 0;font-family:var(--sans);font-size:11.5px;font-style:italic;color:var(--grey)}
 
 /* tablet */
 @media (max-width:760px){
@@ -115,13 +145,18 @@ ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;fo
   .foot-in span:last-child{display:none}
   .cfoot{letter-spacing:.18em;font-size:10px}
   ol.obj li{grid-template-columns:44px minmax(0,1fr)}
-  /* stacked table */
-  th,td{display:block;width:100%}
-  th{padding:12px 8px 0;border-bottom:0}
-  td{padding:2px 8px 12px}
-  tbody tr:nth-child(even){background:transparent}
-  tbody tr:nth-child(odd){background:#f8f9fc}
-  tr:last-child th{border-bottom:0}
+  /* stacked profile table */
+  .info th,.info td{display:block;width:100%}
+  .info th{padding:12px 8px 0;border-bottom:0}
+  .info td{padding:2px 8px 12px}
+  .info tbody tr:nth-child(even){background:transparent}
+  .info tbody tr:nth-child(odd){background:#f8f9fc}
+  .info tr:last-child th{border-bottom:0}
+  /* logbook + journal */
+  .bar nav a{padding:8px 6px;font-size:11.5px}
+  .shots{gap:16px}
+  .sum th,.sum td{padding:7px 6px;font-size:14px}
+  .sum tbody th,.sum tfoot th{font-size:14.5px}
 }
 
 /* print: exact A4 pages */
@@ -135,7 +170,23 @@ ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;fo
   .cfoot{margin-left:-60px;margin-right:-60px}
   .foot-in span:last-child{display:inline}
   .prof{grid-template-columns:170px minmax(0,1fr)}
-  th,td{display:table-cell}
+  .info th,.info td{display:table-cell}
+  .hint{display:none}
+  /* tighter vertical rhythm so every page fits A4 exactly */
+  .sheet{padding-top:40px;padding-bottom:18px}
+  .ptitle{margin-top:26px}
+  .prof{margin-top:22px;gap:30px}
+  .info th,.info td{padding:4px 8px}
+  .info th{padding-top:8px}
+  .info td{font-size:15px;line-height:1.4}
+  h2.h,h3.h{margin-bottom:12px}
+  h3.h{margin-top:28px}
+  .txt p{font-size:14px;line-height:1.5;margin-bottom:9px}
+  ol.obj li{padding:8px 0;font-size:16px}
+  .close{font-size:16px;line-height:1.6;margin-top:22px}
+  .row{padding:9px 4px;min-height:46px}
+  .cover .rows{margin-bottom:24px}
+  .foot{padding-top:18px}
 }
 </style>
 </head>
@@ -149,6 +200,8 @@ ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;fo
       <a href="#cover">Cover</a>
       <a href="#profile">Profile</a>
       <a href="#objectives">Objectives</a>
+      <a href="#logbook">Logbook</a>
+      <a href="#journal">Journal</a>
     </nav>
   </div>
 </header>
@@ -184,7 +237,7 @@ ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;fo
       <div class="frame"><img src="photo.jpg" alt="Portrait of Muhammad Shoaib" width="150" height="197" loading="lazy" decoding="async"></div>
       <h3>Muhammad Shoaib</h3><small>BS English Language Teaching</small>
     </div>
-    <table>
+    <table class="info">
       <tbody>
         <tr><th scope="row">Name</th><td>Muhammad Shoaib</td></tr>
         <tr><th scope="row">Roll number</th><td>2K24/ELT/66</td></tr>
@@ -227,6 +280,115 @@ ol.obj li::before{content:counter(n,decimal-leading-zero);counter-increment:n;fo
   </ol>
   <p class="close">Through these objectives, I aimed to strengthen my teaching abilities, improve my professional knowledge, and gain the practical skills required for a successful career in English Language Teaching.</p>
   <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>3</b><span>Department of English Language and Literature</span></div></footer>
+</section>
+
+<!-- LOGBOOK: WEEKS 1-2 -->
+<section class="sheet" id="logbook" aria-labelledby="t4">
+  <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
+  <div class="ptitle compact"><h2 id="t4">INTERNSHIP LOGBOOK</h2><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div></div>
+  <div class="shots">
+    <!-- Week 1: save the photo as logs/week-01.jpg and it replaces this placeholder automatically -->
+    <figure class="shot slot">
+      <a href="logs/week-01.jpg" target="_blank" rel="noopener"><img src="logs/week-01.jpg" alt="Handwritten internship log sheet for Week 1" onerror="this.remove()"></a>
+      <div class="slot-ph" role="img" aria-label="Space reserved for the Week 1 logbook sheet"><div><b>WEEK 1</b><span>Logbook sheet to be added</span></div></div>
+      <figcaption><b>Logbook Sheet: Week 1</b></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="logs/week-02.jpg" target="_blank" rel="noopener"><img src="logs/week-02.jpg" alt="Handwritten internship log sheet for Week 2"></a>
+      <figcaption><b>Logbook Sheet: Week 2</b> (2 days, 10 hours)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+  </div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>4</b><span>Department of English Language and Literature</span></div></footer>
+</section>
+
+<!-- LOGBOOK: WEEKS 3-4 -->
+<section class="sheet" id="logbook-2" aria-labelledby="t5">
+  <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
+  <h2 class="h first" id="t5">Internship Logbook (continued)</h2>
+  <div class="shots">
+    <figure class="shot">
+      <a href="logs/week-03.jpg" target="_blank" rel="noopener"><img src="logs/week-03.jpg" alt="Handwritten internship log sheet for Week 3"></a>
+      <figcaption><b>Logbook Sheet: Week 3</b> (2 days, 10 hours)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="logs/week-04.jpg" target="_blank" rel="noopener"><img src="logs/week-04.jpg" alt="Handwritten internship log sheet for Week 4"></a>
+      <figcaption><b>Logbook Sheet: Week 4</b> (2 days, 10 hours)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+  </div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>5</b><span>Department of English Language and Literature</span></div></footer>
+</section>
+
+<!-- LOGBOOK: WEEKS 5-6 -->
+<section class="sheet" id="logbook-3" aria-labelledby="t6">
+  <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
+  <h2 class="h first" id="t6">Internship Logbook (continued)</h2>
+  <div class="shots">
+    <figure class="shot">
+      <a href="logs/week-05.jpg" target="_blank" rel="noopener"><img src="logs/week-05.jpg" alt="Handwritten internship log sheet for Week 5"></a>
+      <figcaption><b>Logbook Sheet: Week 5</b> (2 days, 10 hours)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="logs/week-06.jpg" target="_blank" rel="noopener"><img src="logs/week-06.jpg" alt="Handwritten internship log sheet for Week 6"></a>
+      <figcaption><b>Logbook Sheet: Week 6</b> (2 days, 10 hours)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+  </div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>6</b><span>Department of English Language and Literature</span></div></footer>
+</section>
+
+<!-- LOGBOOK: WEEK 7 + SUMMARY -->
+<section class="sheet" id="logbook-4" aria-labelledby="t7">
+  <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
+  <h2 class="h first" id="t7">Internship Logbook (continued)</h2>
+  <div class="shots">
+    <figure class="shot" style="--shot-h:320px">
+      <a href="logs/week-07.jpg" target="_blank" rel="noopener"><img src="logs/week-07.jpg" alt="Handwritten internship log sheet for Week 7"></a>
+      <figcaption><b>Logbook Sheet: Week 7</b> (5 days, 25 hours)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+  </div>
+  <h3 class="h tight">Logbook Summary</h3>
+  <!-- Week 1: fill in its days/hours and update the Total row once the sheet is added -->
+  <table class="sum">
+    <caption class="sr">Days and hours logged per week</caption>
+    <thead><tr><th scope="col">Week</th><th scope="col" class="n">Days logged</th><th scope="col" class="n">Hours</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Week 1 <em>(sheet to be added)</em></th><td class="n">&ndash;</td><td class="n">&ndash;</td></tr>
+      <tr><th scope="row">Week 2</th><td class="n">2</td><td class="n">10</td></tr>
+      <tr><th scope="row">Week 3</th><td class="n">2</td><td class="n">10</td></tr>
+      <tr><th scope="row">Week 4</th><td class="n">2</td><td class="n">10</td></tr>
+      <tr><th scope="row">Week 5</th><td class="n">2</td><td class="n">10</td></tr>
+      <tr><th scope="row">Week 6</th><td class="n">2</td><td class="n">10</td></tr>
+      <tr><th scope="row">Week 7</th><td class="n">5</td><td class="n">25</td></tr>
+    </tbody>
+    <tfoot><tr><th scope="row">Total (Weeks 2&ndash;7)</th><td class="n">15</td><td class="n">75</td></tr></tfoot>
+  </table>
+  <p class="note">Hours counted from the entries recorded on each weekly sheet.</p>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>7</b><span>Department of English Language and Literature</span></div></footer>
+</section>
+
+<!-- REFLECTIVE JOURNAL: FIRST MONTH -->
+<section class="sheet" id="journal" aria-labelledby="t8">
+  <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
+  <div class="ptitle compact"><h2 id="t8">REFLECTIVE JOURNAL</h2><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div><p>First Month (Weeks 1&ndash;4)</p></div>
+  <div class="shots">
+    <figure class="shot big">
+      <a href="logs/reflective-month-1.jpg" target="_blank" rel="noopener"><img src="logs/reflective-month-1.jpg" alt="Handwritten internship reflective log for the first month, weeks 1 to 4"></a>
+      <figcaption><b>Internship Reflective Log: First Month (Weeks 1&ndash;4)</b> (original handwritten page)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+  </div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>8</b><span>Department of English Language and Literature</span></div></footer>
+</section>
+
+<!-- REFLECTIVE JOURNAL: SECOND MONTH -->
+<section class="sheet" id="journal-2" aria-labelledby="t9">
+  <div class="top"><b>University of Sindh, Jamshoro</b><span>Internship Portfolio</span></div>
+  <div class="ptitle compact"><h2 id="t9">REFLECTIVE JOURNAL</h2><div class="orn" aria-hidden="true"><i></i><b></b><i></i></div><p>Second Month (Weeks 5&ndash;7)</p></div>
+  <div class="shots">
+    <figure class="shot big">
+      <a href="logs/reflective-month-2.jpg" target="_blank" rel="noopener"><img src="logs/reflective-month-2.jpg" alt="Handwritten internship reflective log for the second month, weeks 5 to 7"></a>
+      <figcaption><b>Internship Reflective Log: Second Month (Weeks 5&ndash;7)</b> (original handwritten page)<span class="hint">Tap or click to enlarge</span></figcaption>
+    </figure>
+  </div>
+  <footer class="foot"><div class="foot-in"><span>Muhammad Shoaib | 2K24/ELT/66</span><b>9</b><span>Department of English Language and Literature</span></div></footer>
 </section>
 
 </main>
